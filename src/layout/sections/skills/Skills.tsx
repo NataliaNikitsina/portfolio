@@ -10,6 +10,7 @@ export const Skills = () => {
         <StyledSection direction="column" align="center">
             <StyledTitleH2>Skills</StyledTitleH2>
             <FlexWrapper wrap="wrap" gap="95px" maxWidth="1200px">
+                {}
                 <Icon iconId="webStormIcon" viewBox="0 0 70 70" />
                 <Icon iconId="htmlIcon" />
                 <Icon iconId="cssIcon" />

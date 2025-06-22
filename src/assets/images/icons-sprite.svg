@@ -1,5 +1,5 @@
 <svg enable-background="new 0 0 70 70" version="1.1" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
-	<g id="webStormIcon">
+	<g id="webStormIcon" >
 		<linearGradient id="c" x1="25.068" x2="43.183" y1="1.4599" y2="66.675" gradientUnits="userSpaceOnUse">
 		<stop stop-color="#00CDD7" offset=".2849"/>
             <stop stop-color="#2086D7" offset=".9409"/>
