@@ -1,7 +1,8 @@
-// import React from 'react';
 import styled from "styled-components";
-import {Logo} from "../../components/logo/Logo.tsx";
-import {Menu} from "../../components/menu/Menu.tsx";
+import {Container} from "../../components/Container.ts";
+import {FlexWrapper} from "../../components/flexWrapper/FlexWrapper.tsx";
+import {theme} from "../../styles/Theme.ts";
+import {HeaderMenu} from "./headerMenu/HeaderMenu.tsx";
 
 const headerArray = [
     "About",
@@ -13,13 +14,30 @@ const headerArray = [
 export const Header = () => {
     return (
         <StyledHeader>
-            <Logo/>
-            <Menu menuItems={headerArray}/>
+            <Container>
+                <FlexWrapper justify={"space-between"} align={"center"}>
+                    <StyledName>Natalia Nikitsina</StyledName>
+                    <HeaderMenu menuItems={headerArray}/>
+                </FlexWrapper>
+            </Container>
         </StyledHeader>
     );
 };
 
 const StyledHeader = styled.header`
-    display: flex;
-    justify-content: space-between;
+    background-color: ${theme.colors.primaryBg};
+    padding: 14px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99999;
+`
+
+const StyledName = styled.span`
+    font-family: "Comfortaa", sans-serif;;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 180%;
+    color: ${theme.colors.fontMain};
 `
