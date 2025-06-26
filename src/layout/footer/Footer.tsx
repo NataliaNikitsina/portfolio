@@ -1,6 +1,8 @@
-// import React from 'react';
 import styled from "styled-components";
 import {SocialLink} from "./SocialLink.tsx";
+import {Container} from "../../components/Container.ts";
+import {FlexWrapper} from "../../components/flexWrapper/FlexWrapper.tsx";
+import {theme} from "../../styles/Theme.ts";
 
 const socialLinkArray = [
     "instagramLogo",
@@ -11,30 +13,30 @@ const socialLinkArray = [
 export const Footer = () => {
     return (
         <StyledFooter>
-            <StyledList>
-                {socialLinkArray.map(item => (<SocialLink iconId={item}/>))}
-            </StyledList>
-            <StyledSmall>Natalia Nikitsina</StyledSmall>
+            <Container>
+                <FlexWrapper direction="column" align={"center"} gap={"32px"}>
+                    <StyledList>
+                        {socialLinkArray.map(item => (<SocialLink iconId={item}/>))}
+                    </StyledList>
+                    <StyledSmall>Natalia Nikitsina 2025</StyledSmall>
+                </FlexWrapper>
+            </Container>
         </StyledFooter>
     );
 };
 
 const StyledFooter = styled.footer`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 32px;
+    background: ${theme.colors.primaryBg};
 `
 const StyledList = styled.ul`
     list-style: none;
     display: flex;
     gap: 24px;
-   padding: 0;
 `
 
 const StyledSmall = styled.small`
-    font-family: "Nunito", sans-serif;
     font-weight: 400;
     font-size: 16px;
-    color: #828282;
+    color: ${theme.colors.fontText};
+    margin-bottom: 240px;
 `
