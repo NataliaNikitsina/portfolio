@@ -35,5 +35,6 @@ export const GlobalStyle = createGlobalStyle`
     
     section {
         background-color: ${theme.colors.primaryBg};
+        padding-bottom: 144px;
     }
 `

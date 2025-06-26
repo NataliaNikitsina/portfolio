@@ -15,6 +15,7 @@ export const StyledTitleH2 = styled.h2`
     font-size: 48px;
     text-align: center;
     color: ${theme.colors.fontMain};
+    margin-bottom: 80px;
 `
 
 export const StyledTitleH3 = styled.h3`
