@@ -1,6 +1,5 @@
-// import React from 'react';
-
 import styled from "styled-components";
+import {theme} from "../../../styles/Theme.ts";
 
 type InputButtonPropsType = {
     inputType: string,
@@ -24,11 +23,11 @@ const StyledInputButton = styled.input<StyledInputPropsType>`
     border-radius: 8px;
     padding: 8px 24px;
     max-width: ${props => props.width};
-    background: #fdc435;
+    background: ${theme.colors.accent};
     font-family: "Roboto", sans-serif;
     font-weight: 500;
     font-size: 18px;
     line-height: 1.5;
-    color: #25282b;
+    color: ${theme.colors.fontMain};
     align-self: ${props => props.align || 'auto'};;
 `

@@ -1,13 +1,12 @@
-// import React from 'react';
-
 import {textArray} from "../../../components/text/textArray.ts";
 import imageProject1 from "../../../assets/images/project-1.webp";
 import imageProject2 from "../../../assets/images/project-2.webp";
 import imageProject3 from "../../../assets/images/project-3.webp";
 import {FlexWrapper} from "../../../components/flexWrapper/FlexWrapper.tsx";
 import {StyledTitleH2} from "../../../components/title/allTitle.tsx";
-import {StyledSection} from "../../../components/StyledSection.tsx";
 import {Project} from "./Project.tsx";
+import styled from "styled-components";
+import {Container} from "../../../components/Container.ts";
 
 const projectsArray = [
     {
@@ -29,11 +28,16 @@ const projectsArray = [
 
 export const ProjectsField = () => {
     return (
-        <StyledSection direction="column" align="center">
-            <StyledTitleH2>Projects</StyledTitleH2>
-            <FlexWrapper direction="column" align="center" gap="80px">
-                {projectsArray.map( item => (<Project title={item.projectTitle} text={item.projectText} way={item.imageWay}/>))}
-            </FlexWrapper>
-        </StyledSection>
+        <StyledProjectsField>
+            <Container>
+                <StyledTitleH2>Projects</StyledTitleH2>
+                <FlexWrapper direction="column" align="center" gap="80px">
+                    {projectsArray.map( (item, i) => (<Project key={i} title={item.projectTitle} text={item.projectText} way={item.imageWay}/>))}
+                </FlexWrapper>
+            </Container>
+        </StyledProjectsField>
     );
 };
+ const StyledProjectsField = styled.section`
+ 
+ `

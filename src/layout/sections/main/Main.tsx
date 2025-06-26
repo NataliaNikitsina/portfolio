@@ -14,7 +14,7 @@ export const Main = () => {
         <StyledMain>
             <Container className="main-container">
                 <FlexWrapper justify={"space-between"} align={"center"}>
-                    <FlexWrapper direction="column" gap="12px" maxWidth="508px">
+                    <FlexWrapper className="main-info" direction="column" gap="12px">
                         <StyledTitleH1>Software Developer</StyledTitleH1>
                         <FlexWrapper direction="column" gap="32px">
                             <StyledHello>Hello,  my name is <span>Natalia Nikitsina</span></StyledHello>
@@ -40,6 +40,11 @@ const StyledMain = styled.section`
     
     .main-container {
         position: relative;
+        
+        .main-info {
+            max-width: 508px;
+            width: 100%;
+        }
     }
 `
 const PhotoWrapper = styled.div`

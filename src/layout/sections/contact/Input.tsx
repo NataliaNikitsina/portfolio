@@ -1,14 +1,12 @@
-// import React from 'react';
-
 import styled from "styled-components";
 import {FlexWrapper} from "../../../components/flexWrapper/FlexWrapper.tsx";
+import {theme} from "../../../styles/Theme.ts";
 
 
 type InputPropsType = {
     labelText: string,
     inputType?: string,
     placeholder?: string,
-    width: string,
     idInput?: string,
 }
 
@@ -17,47 +15,43 @@ export const Input = (props: InputPropsType) => {
         <FlexWrapper direction="column" gap="8px">
             <StyledLabel htmlFor={props.idInput}>{props.labelText}</StyledLabel>
             {props.inputType === "textarea" ?
-                <StyledTextarea width={props.width}
-                                id={props.idInput}/> :
+                <StyledTextarea id={props.idInput}
+                                placeholder={props.placeholder}/>
+                      :
                 <StyledInput type={props.inputType}
-                             width={props.width}
-                             id={props.idInput}/>}
+                             id={props.idInput}
+                             placeholder={props.placeholder}/>}
         </FlexWrapper>
     )
         ;
 };
 
-type StyledInputPropsType = {
-    width: string,
-}
-
-const StyledInput = styled.input<StyledInputPropsType>`
-    width: ${props => props.width};
+const StyledInput = styled.input`
+    width: 400px;
     min-height: 40px;
     border: 1px solid #e8ecf4;
     border-radius: 8px;
-    background: #fff;
+    background: ${theme.colors.secondaryBg};
     font-size: 16px;
-    font-family: "Nunito", sans-serif;
+    font-family: inherit;
+    padding-left: 10px;
 `
 
 const StyledLabel = styled.label`
-    font-family: "Nunito", sans-serif;
     font-weight: 600;
     font-size: 16px;
-    color: #25282b;
+    color: ${theme.colors.fontMain};
 `
-type StyledTextareaPropsType = {
-    width: string,
-}
 
-const StyledTextarea = styled.textarea<StyledTextareaPropsType>`
+const StyledTextarea = styled.textarea`
     border: 1px solid #e8ecf4;
     border-radius: 8px;
-    width: ${props => props.width};
+    width: 400px;
     min-height: 160px;
-    background: #fff;
+    background: ${theme.colors.secondaryBg};
     font-size: 16px;
-    font-family: "Nunito", sans-serif;
+    font-family: inherit;
     resize: none;
+    padding-left: 10px;
+    padding-top: 5px;
 `

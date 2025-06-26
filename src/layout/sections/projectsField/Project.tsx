@@ -1,5 +1,3 @@
-// import React from 'react';
-
 import styled from "styled-components";
 import {StyledTitleH3} from "../../../components/title/allTitle.tsx";
 import {Image} from "../../../components/image/Image.tsx";
@@ -17,7 +15,7 @@ type ProjectPropsType = {
 export const Project = (props : ProjectPropsType) => {
     return (
         <StyledProject>
-            <FlexWrapper direction="column" justify="center">
+            <FlexWrapper className="project-content" direction="column" justify={"center"} gap={"24px"}>
                 <StyledTitleH3>{props.title}</StyledTitleH3>
                 <StyledText>{props.text}</StyledText>
                 <StyledLinkBtn border="1px solid #25282b" radius="24px">View Project</StyledLinkBtn>
@@ -34,4 +32,12 @@ const StyledProject = styled.div`
     max-width: 992px;
     min-height: 524px;
     display: flex;
+    
+    &:nth-of-type(even) {
+        flex-direction: row-reverse;
+    }
+    
+    .project-content {
+        margin: 145px 38px 145px 50px;
+    }
 `
