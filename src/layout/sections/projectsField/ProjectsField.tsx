@@ -1,6 +1,6 @@
 // import React from 'react';
 
-import {textArray} from "../../../components/text/textArray.tsx";
+import {textArray} from "../../../components/text/textArray.ts";
 import imageProject1 from "../../../assets/images/project-1.webp";
 import imageProject2 from "../../../assets/images/project-2.webp";
 import imageProject3 from "../../../assets/images/project-3.webp";

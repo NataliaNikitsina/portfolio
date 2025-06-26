@@ -25,7 +25,6 @@ export const Header = () => {
 };
 
 const StyledHeader = styled.header`
-    background-color: ${theme.colors.primaryBg};
     padding: 14px 0;
     position: fixed;
     top: 0;
@@ -37,7 +36,6 @@ const StyledHeader = styled.header`
 const StyledName = styled.span`
     font-family: "Comfortaa", sans-serif;;
     font-weight: 700;
-    font-size: 18px;
-    line-height: 180%;
+    font-size: 20px;
     color: ${theme.colors.fontMain};
 `

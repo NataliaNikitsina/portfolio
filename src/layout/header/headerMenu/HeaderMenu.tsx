@@ -32,8 +32,7 @@ const StyledHeaderMenu = styled.nav`
 const Link = styled.a`
     font-family: "Raleway", sans-serif;
     font-weight: 500;
-    font-size: 18px;
-    line-height: 156%;
+    font-size: 20px;
     color:transparent;
 `
 const Mask = styled.span`
@@ -63,7 +62,7 @@ const ListItem = styled.li`
         display: inline-block;
         width: 2px;
         height: 2em;
-        background-color: ${theme.colors.accent};
+        background-color: ${theme.colors.fontMain};
         position: absolute;
         top: -2px;
         left: 50%;
@@ -80,7 +79,7 @@ const ListItem = styled.li`
         
         ${Mask} {
             transform: skewX(10deg) translateX(-2px);
-            color: ${theme.colors.accent};
+            // color: ${theme.colors.accent};
             
             & + ${Mask} {
                 transform: skewX(10deg) translateX(2px);
