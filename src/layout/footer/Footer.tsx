@@ -5,7 +5,7 @@ import {FlexWrapper} from "../../components/flexWrapper/FlexWrapper.tsx";
 import {theme} from "../../styles/Theme.ts";
 
 const socialLinkArray = [
-    "instagramLogo",
+    "gitHubLogo",
     "linkedinLogo",
     "mailLogo",
 ]
