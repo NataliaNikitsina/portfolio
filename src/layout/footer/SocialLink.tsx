@@ -9,7 +9,7 @@ export const SocialLink = (props: SocialLinkPropsType) => {
     return (
        <StyledListItem>
            <a href="/">
-               <Icon iconId={props.iconId} height={"49px"} width={"48px"} viewBox="0 0 48 49"/>
+               <Icon iconId={props.iconId} height={"49px"} width={"48px"}/>
            </a>
        </StyledListItem>
     );

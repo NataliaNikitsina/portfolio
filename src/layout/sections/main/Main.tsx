@@ -12,23 +12,21 @@ import {theme} from "../../../styles/Theme.ts";
 export const Main = () => {
     return (
         <StyledMain>
-            <Container className="main-container">
-                <FlexWrapper justify={"space-between"} align={"center"}>
-                    <FlexWrapper className="main-info" direction="column" gap="12px">
-                        <StyledTitleH1>Software Developer</StyledTitleH1>
-                        <FlexWrapper direction="column" gap="32px">
-                            <StyledHello>Hello,  my name is <span>Natalia Nikitsina</span></StyledHello>
-                            <StyledText>{textArray[0]}</StyledText>
-                            <FlexWrapper gap="12px">
-                                <StyledLinkBtn href='/' radius='8px' backgroundColor='#fdc435'>Projects</StyledLinkBtn>
-                                <StyledLinkBtn href='/' border='2px solid #25282b;' radius='8px'>LinkedIn</StyledLinkBtn>
-                            </FlexWrapper>
+            <Container>
+                <FlexWrapper direction="column" gap="12px">
+                    <StyledTitleH1>Software Developer</StyledTitleH1>
+                    <FlexWrapper direction="column" gap="32px">
+                        <StyledHello>Hello, my name is <span>Natalia Nikitsina</span></StyledHello>
+                        <StyledText>{textArray[0]}</StyledText>
+                        <FlexWrapper gap="12px">
+                            <StyledLinkBtn href='/' radius='8px' backgroundColor='#fdc435'>Projects</StyledLinkBtn>
+                            <StyledLinkBtn href='/' border='2px solid #25282b;' radius='8px'>LinkedIn</StyledLinkBtn>
                         </FlexWrapper>
                     </FlexWrapper>
-                    <PhotoWrapper>
-                        <Photo src={photo} alt="photo"/>
-                    </PhotoWrapper>
                 </FlexWrapper>
+                <PhotoWrapper>
+                    <Photo src={photo} alt="photo"/>
+                </PhotoWrapper>
             </Container>
         </StyledMain>
     );
@@ -36,34 +34,37 @@ export const Main = () => {
 
 const StyledMain = styled.section`
     display: flex;
-    min-height: 100vh;
+    padding-bottom: 350px;
     
-    .main-container {
+    ${Container} {
         position: relative;
-        
-        .main-info {
-            max-width: 508px;
-            width: 100%;
-        }
+    }
+
+    ${FlexWrapper} {
+        max-width: 508px;
+        width: 100%;
     }
 `
 const PhotoWrapper = styled.div`
     background-image: url("${photoBcg}");
     background-repeat: no-repeat;
-    max-width: 720px;
+    background-position: 0 100%;
+    max-width: 777px;
     width: 100%;
     min-height: 629px;
     align-self: flex-start;
     
     position: absolute;
+    top: 0;
     right: -105px;
 `
 
 const Photo = styled.img`
     object-fit: cover;
+    object-position: 3px 8px;
     max-width: 720px;
     width: 100%;
-    height: 629px;
+    height: 100%;
 `
 
 const StyledHello = styled.span`

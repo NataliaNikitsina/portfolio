@@ -27,7 +27,7 @@ export const Skills = () => {
         <StyledSKills>
             <Container>
                 <StyledTitleH2>Skills</StyledTitleH2>
-                <FlexWrapper className="skills-wrapper" wrap="wrap" justify="space-evenly">
+                <FlexWrapper wrap="wrap" justify="space-evenly">
                     {skillArray.map((skill, i) => (<Icon key={i} iconId={skill}/>) ) }
                 </FlexWrapper>
             </Container>
@@ -37,7 +37,11 @@ export const Skills = () => {
 
 const StyledSKills = styled.section` 
     
-    .skills-wrapper {
+    ${StyledTitleH2}{
+        
+    }
+    
+    ${FlexWrapper} {
         row-gap: 84px;
         column-gap: 97px;
     }

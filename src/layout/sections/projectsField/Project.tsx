@@ -15,7 +15,7 @@ type ProjectPropsType = {
 export const Project = (props : ProjectPropsType) => {
     return (
         <StyledProject>
-            <FlexWrapper className="project-content" direction="column" justify={"center"} gap={"24px"}>
+            <FlexWrapper direction="column" justify={"center"} gap={"24px"}>
                 <StyledTitleH3>{props.title}</StyledTitleH3>
                 <StyledText>{props.text}</StyledText>
                 <StyledLinkBtn border="1px solid #25282b" radius="24px">View Project</StyledLinkBtn>
@@ -31,13 +31,14 @@ const StyledProject = styled.div`
     border-radius: 24px;
     max-width: 992px;
     min-height: 524px;
+    overflow: hidden;
     display: flex;
     
     &:nth-of-type(even) {
         flex-direction: row-reverse;
     }
     
-    .project-content {
+    ${FlexWrapper} {
         margin: 145px 38px 145px 50px;
     }
 `
