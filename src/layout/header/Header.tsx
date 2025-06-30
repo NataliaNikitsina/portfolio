@@ -36,6 +36,6 @@ const StyledHeader = styled.header`
 const StyledName = styled.span`
     font-family: "Comfortaa", sans-serif;;
     font-weight: 700;
-    font-size: 20px;
+    font-size: 22px;
     color: ${theme.colors.fontMain};
 `

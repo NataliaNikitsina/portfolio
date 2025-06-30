@@ -13,7 +13,7 @@ const socialLinkArray = [
 export const Footer = () => {
     return (
         <StyledFooter>
-            <FlexWrapper direction="column" align={"center"} gap={"32px"}>
+            <FlexWrapper direction="column" align={"center"} gap={"30px"}>
                 <StyledList>
                     {socialLinkArray.map(item => (<SocialLink iconId={item}/>))}
                 </StyledList>
@@ -25,7 +25,7 @@ export const Footer = () => {
 
 const StyledFooter = styled.footer`
     background: ${theme.colors.primaryBg};
-    margin: 56px auto 0;
+    margin: 66px auto 0;
     background-image: url("${footerBcg}");
     background-size: cover;
     background-position: center;
@@ -43,5 +43,4 @@ const StyledSmall = styled.small`
     font-weight: 400;
     font-size: 16px;
     color: ${theme.colors.fontText};
-    margin-bottom: 240px;
 `
