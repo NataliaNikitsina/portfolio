@@ -57,6 +57,9 @@ const ImageWrapper = styled.div`
 
     ${StyledLinkBtn} {
         border-radius: 8px;
+        max-width: 150px;
+        width: 100%;
+        min-height: 43px;
         background-color: ${theme.colors.accent};
         
         opacity: 0;
@@ -65,7 +68,6 @@ const ImageWrapper = styled.div`
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
-        min-width: 150px;
     }
 
     &:hover {

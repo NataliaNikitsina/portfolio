@@ -16,7 +16,7 @@ export const Main = () => {
                     <FlexWrapper direction="column" gap="32px">
                         <StyledHello>Hello, my name is <span>Natalia Nikitsina</span></StyledHello>
                         <p>{textArray[0]}</p>
-                        <FlexWrapper gap="12px">
+                        <FlexWrapper gap="20px">
                             <StyledLinkBtn href='/'>Projects</StyledLinkBtn>
                             <StyledLinkBtn href='/'>LinkedIn</StyledLinkBtn>
                         </FlexWrapper>
@@ -43,6 +43,9 @@ const StyledMain = styled.section`
         width: 100%;
 
         ${StyledLinkBtn} {
+            max-width: 117px;
+            width: 100%;
+            min-height: 43px;
             border-radius: 8px;
             background-color: ${theme.colors.accent};
 
