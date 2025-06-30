@@ -15,7 +15,7 @@ export const Input = (props: InputPropsType) => {
         <FlexWrapper direction="column" gap="8px">
             <StyledLabel htmlFor={props.idInput}>{props.labelText}</StyledLabel>
             {props.inputType === "textarea" ?
-                <StyledTextarea id={props.idInput}
+                <StyledInput as={"textarea"} id={props.idInput}
                                 placeholder={props.placeholder}/>
                       :
                 <StyledInput type={props.inputType}
@@ -26,32 +26,28 @@ export const Input = (props: InputPropsType) => {
         ;
 };
 
-const StyledInput = styled.input`
-    width: 400px;
-    min-height: 40px;
-    border: 1px solid #e8ecf4;
-    border-radius: 8px;
-    background: ${theme.colors.secondaryBg};
-    font-size: 16px;
-    font-family: inherit;
-    padding-left: 10px;
-`
-
 const StyledLabel = styled.label`
     font-weight: 600;
     font-size: 16px;
     color: ${theme.colors.fontMain};
 `
 
-const StyledTextarea = styled.textarea`
+export const StyledInput = styled.input`
+    width: 100%;
+    min-height: 40px;
     border: 1px solid #e8ecf4;
     border-radius: 8px;
-    width: 400px;
-    min-height: 160px;
     background: ${theme.colors.secondaryBg};
     font-size: 16px;
-    font-family: inherit;
-    resize: none;
+    font-family: Nunito, sans-serif;
     padding-left: 10px;
-    padding-top: 5px;
+    color: ${theme.colors.fontMain};
+
+    &::placeholder {
+        color: ${theme.colors.fontText}
+    };
+
+    &:focus-visible {
+        outline: 1px solid ${theme.colors.fontText};
+    }
 `

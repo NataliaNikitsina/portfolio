@@ -1,7 +1,8 @@
 import styled from "styled-components";
 import {Image} from "../../../components/image/Image.tsx";
 import {FlexWrapper} from "../../../components/flexWrapper/FlexWrapper.tsx";
-import {StyledLinkBtn} from "../../../components/StyledLinkBtn.tsx";
+import {StyledLinkBtn} from "../../../components/StyledLinkBtn.ts";
+import {theme} from "../../../styles/Theme.ts";
 
 
 type ProjectPropsType = {
@@ -16,11 +17,11 @@ export const Project = (props : ProjectPropsType) => {
             <FlexWrapper direction="column" justify={"center"} gap={"24px"}>
                 <h3>{props.title}</h3>
                 <p>{props.text}</p>
-                <StyledLinkBtn border="1px solid #25282b" radius="24px">View Project</StyledLinkBtn>
+                <StyledLinkBtn>View Project</StyledLinkBtn>
             </FlexWrapper>
             <ImageWrapper>
                 <Image source={props.way} alt="Project Name"/>
-                <StyledLinkBtn href='/' radius='8px' backgroundColor='#fdc435'>Open</StyledLinkBtn>
+                <StyledLinkBtn href='/'>Open</StyledLinkBtn>
             </ImageWrapper>
         </StyledProject>
     );
@@ -40,6 +41,11 @@ const StyledProject = styled.div`
     
     ${FlexWrapper} {
         margin: 145px 38px 145px 50px;
+        
+        ${StyledLinkBtn} {
+            border: 1px solid ${theme.colors.fontMain};
+            border-radius: 24px;
+        }
     }
     
 `
@@ -50,6 +56,9 @@ const ImageWrapper = styled.div`
     position: relative;
 
     ${StyledLinkBtn} {
+        border-radius: 8px;
+        background-color: ${theme.colors.accent};
+        
         opacity: 0;
 
         position: absolute;

@@ -3,7 +3,7 @@ import {FlexWrapper} from "../../../components/flexWrapper/FlexWrapper.tsx";
 import photo from "../../../assets/images/main.svg"
 import photoBcg from "../../../assets/images/main-bg.svg"
 import {textArray} from "../../../components/textArray.ts";
-import {StyledLinkBtn} from "../../../components/StyledLinkBtn.tsx";
+import {StyledLinkBtn} from "../../../components/StyledLinkBtn.ts";
 import {Container} from "../../../components/Container.ts";
 import {theme} from "../../../styles/Theme.ts";
 
@@ -17,8 +17,8 @@ export const Main = () => {
                         <StyledHello>Hello, my name is <span>Natalia Nikitsina</span></StyledHello>
                         <p>{textArray[0]}</p>
                         <FlexWrapper gap="12px">
-                            <StyledLinkBtn href='/' radius='8px' backgroundColor='#fdc435'>Projects</StyledLinkBtn>
-                            <StyledLinkBtn href='/' border='2px solid #25282b;' radius='8px'>LinkedIn</StyledLinkBtn>
+                            <StyledLinkBtn href='/'>Projects</StyledLinkBtn>
+                            <StyledLinkBtn href='/'>LinkedIn</StyledLinkBtn>
                         </FlexWrapper>
                     </FlexWrapper>
                 </FlexWrapper>
@@ -33,7 +33,7 @@ export const Main = () => {
 const StyledMain = styled.section`
     display: flex;
     margin-bottom: 350px;
-    
+
     ${Container} {
         position: relative;
     }
@@ -41,6 +41,16 @@ const StyledMain = styled.section`
     ${FlexWrapper} {
         max-width: 508px;
         width: 100%;
+
+        ${StyledLinkBtn} {
+            border-radius: 8px;
+            background-color: ${theme.colors.accent};
+
+            & + ${StyledLinkBtn} {
+                border: 2px solid ${theme.colors.fontMain};
+                background-color: transparent;
+            }
+        }
     }
 `
 const PhotoWrapper = styled.div`
