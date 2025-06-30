@@ -39,5 +39,5 @@ export const ProjectsField = () => {
     );
 };
  const StyledProjectsField = styled.section`
- 
+     margin-bottom: 144px;
  `

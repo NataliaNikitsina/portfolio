@@ -35,11 +35,8 @@ export const Skills = () => {
     );
 };
 
-const StyledSKills = styled.section` 
-    
-    ${StyledTitleH2}{
-        
-    }
+const StyledSKills = styled.section`
+    margin-bottom: 144px;
     
     ${FlexWrapper} {
         row-gap: 84px;

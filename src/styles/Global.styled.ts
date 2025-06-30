@@ -34,10 +34,6 @@ export const GlobalStyle = createGlobalStyle`
         border: none;
     }
     
-    section {
-        margin-bottom: 144px;
-    }
-    
     h1 {
         font-weight: 700;
         font-size: 20px;

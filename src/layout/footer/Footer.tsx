@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import {SocialLink} from "./SocialLink.tsx";
-import {Container} from "../../components/Container.ts";
 import {FlexWrapper} from "../../components/flexWrapper/FlexWrapper.tsx";
 import {theme} from "../../styles/Theme.ts";
+import footerBcg from "../../assets/images/footer-bcg.svg"
 
 const socialLinkArray = [
     "gitHubLogo",
@@ -13,20 +13,25 @@ const socialLinkArray = [
 export const Footer = () => {
     return (
         <StyledFooter>
-            <Container>
-                <FlexWrapper direction="column" align={"center"} gap={"32px"}>
-                    <StyledList>
-                        {socialLinkArray.map(item => (<SocialLink iconId={item}/>))}
-                    </StyledList>
-                    <StyledSmall>Natalia Nikitsina 2025</StyledSmall>
-                </FlexWrapper>
-            </Container>
+            <FlexWrapper direction="column" align={"center"} gap={"32px"}>
+                <StyledList>
+                    {socialLinkArray.map(item => (<SocialLink iconId={item}/>))}
+                </StyledList>
+                <StyledSmall>Natalia Nikitsina 2025</StyledSmall>
+            </FlexWrapper>
         </StyledFooter>
     );
 };
 
 const StyledFooter = styled.footer`
     background: ${theme.colors.primaryBg};
+    margin: 56px auto 0;
+    background-image: url("${footerBcg}");
+    background-size: cover;
+    background-position: center;
+    max-width: 1440px;
+    width: 100%;
+    min-height: 344px;
 `
 const StyledList = styled.ul`
     list-style: none;

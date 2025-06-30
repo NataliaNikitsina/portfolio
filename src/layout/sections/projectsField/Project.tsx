@@ -63,7 +63,7 @@ const ImageWrapper = styled.div`
         &::before {
             position: absolute;
             content: "";
-            backdrop-filter: blur(8px);
+            backdrop-filter: blur(6px);
             background: rgba(0, 0, 0, 0.12);
             top: 0;
             bottom: 0;
