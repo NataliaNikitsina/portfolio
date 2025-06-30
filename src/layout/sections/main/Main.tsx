@@ -2,10 +2,8 @@ import styled from "styled-components";
 import {FlexWrapper} from "../../../components/flexWrapper/FlexWrapper.tsx";
 import photo from "../../../assets/images/main.svg"
 import photoBcg from "../../../assets/images/main-bg.svg"
-import {StyledText} from "../../../components/text/StyledText.tsx";
-import {textArray} from "../../../components/text/textArray.ts";
+import {textArray} from "../../../components/textArray.ts";
 import {StyledLinkBtn} from "../../../components/StyledLinkBtn.tsx";
-import {StyledTitleH1} from "../../../components/title/allTitle.tsx";
 import {Container} from "../../../components/Container.ts";
 import {theme} from "../../../styles/Theme.ts";
 
@@ -14,10 +12,10 @@ export const Main = () => {
         <StyledMain>
             <Container>
                 <FlexWrapper direction="column" gap="12px">
-                    <StyledTitleH1>Software Developer</StyledTitleH1>
+                    <h1>Software Developer</h1>
                     <FlexWrapper direction="column" gap="32px">
                         <StyledHello>Hello, my name is <span>Natalia Nikitsina</span></StyledHello>
-                        <StyledText>{textArray[0]}</StyledText>
+                        <p>{textArray[0]}</p>
                         <FlexWrapper gap="12px">
                             <StyledLinkBtn href='/' radius='8px' backgroundColor='#fdc435'>Projects</StyledLinkBtn>
                             <StyledLinkBtn href='/' border='2px solid #25282b;' radius='8px'>LinkedIn</StyledLinkBtn>
@@ -34,7 +32,7 @@ export const Main = () => {
 
 const StyledMain = styled.section`
     display: flex;
-    padding-bottom: 350px;
+    margin-bottom: 350px;
     
     ${Container} {
         position: relative;

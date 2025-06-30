@@ -1,6 +1,6 @@
 import {FlexWrapper} from "../../../components/flexWrapper/FlexWrapper.tsx";
 import {Icon} from "../../../components/icon/Icon.tsx";
-import {StyledTitleH2} from "../../../components/title/allTitle.tsx";
+import {StyledTitleH2} from "../../../components/StyledTitleH2.ts";
 import styled from "styled-components";
 import {Container} from "../../../components/Container.ts";
 

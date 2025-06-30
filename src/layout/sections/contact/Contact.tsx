@@ -1,6 +1,6 @@
 import {Input} from "./Input.tsx";
 import {InputButton} from "./InputButton.tsx";
-import {StyledTitleH2} from "../../../components/title/allTitle.tsx";
+import {StyledTitleH2} from "../../../components/StyledTitleH2.ts";
 import {FlexWrapper} from "../../../components/flexWrapper/FlexWrapper.tsx";
 import {StyledForm} from "./StyledForm.tsx";
 import styled from "styled-components";

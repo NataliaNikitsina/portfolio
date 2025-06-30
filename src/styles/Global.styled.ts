@@ -18,6 +18,7 @@ export const GlobalStyle = createGlobalStyle`
         -webkit-font-smoothing: antialiased;
         -moz-osx-font-smoothing: grayscale;
         line-height: 1.2;
+        background-color: ${theme.colors.primaryBg};
     }
     
     a {
@@ -34,7 +35,38 @@ export const GlobalStyle = createGlobalStyle`
     }
     
     section {
-        background-color: ${theme.colors.primaryBg};
-        padding-bottom: 144px;
+        margin-bottom: 144px;
+    }
+    
+    h1 {
+        font-weight: 700;
+        font-size: 20px;
+        text-transform: uppercase;
+        color: ${theme.colors.accent};
+        margin-top: 110px;
+    }
+    
+    h2 {
+        font-family: "Playfair Display", sans-serif;
+        font-weight: 700;
+        font-size: 48px;
+        text-align: center;
+        line-height: 150%;
+        color: ${theme.colors.fontMain};
+    }
+    
+    h3 {
+        font-family: "Playfair Display", sans-serif;
+        font-weight: 700;
+        font-size: 40px;
+        color: ${theme.colors.fontMain};
+    }
+    
+    p {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 1.5;
+        color: ${theme.colors.fontText};
+        text-align: left;
     }
 `
