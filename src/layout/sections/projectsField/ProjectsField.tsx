@@ -7,6 +7,7 @@ import {StyledTitleH2} from "../../../components/StyledTitleH2.ts";
 import {Project} from "./Project.tsx";
 import styled from "styled-components";
 import {Container} from "../../../components/Container.ts";
+import {theme} from "../../../styles/Theme.ts";
 
 const projectsArray = [
     {
@@ -40,4 +41,8 @@ export const ProjectsField = () => {
 };
  const StyledProjectsField = styled.section`
      margin-bottom: 144px;
+
+     @media ${theme.media.tablet} {
+         margin-bottom: 60px;
+     }
  `

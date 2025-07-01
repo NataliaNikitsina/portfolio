@@ -4,6 +4,11 @@ import {theme} from "../styles/Theme.ts";
 
 export const StyledTitleH2 = styled.h2`
     margin-bottom: 80px;
+
+    @media ${theme.media.tablet} {
+        font-size: 44px;
+        margin-bottom: 45px;
+    }
     
     position: relative;
     

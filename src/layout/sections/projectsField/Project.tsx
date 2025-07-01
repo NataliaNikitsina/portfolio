@@ -31,20 +31,35 @@ const StyledProject = styled.div`
     box-shadow: 0 6px 64px 0 rgba(112, 144, 176, 0.1);
     border-radius: 24px;
     max-width: 992px;
-    min-height: 524px;
+    width: 100%;
     overflow: hidden;
     display: flex;
+    justify-content: space-between;
     
     &:nth-of-type(even) {
         flex-direction: row-reverse;
     }
     
     ${FlexWrapper} {
-        margin: 145px 38px 145px 50px;
+        max-width: 410px;
+        margin-left: 50px;
+        
+        @media ${theme.media.tablet} {
+            max-width: 310px;
+            margin-right: 20px;
+            
+            h3 {
+                font-size: 32px;
+            }
+        }
         
         ${StyledLinkBtn} {
             border: 1px solid ${theme.colors.fontMain};
             border-radius: 24px;
+
+            @media ${theme.media.tablet} {
+                font-size: 16px;
+            }
         }
     }
     
@@ -53,6 +68,7 @@ const StyledProject = styled.div`
 const ImageWrapper = styled.div`
     max-width: 495px;
     width: 100%;
+    
     position: relative;
 
     ${StyledLinkBtn} {
@@ -68,6 +84,10 @@ const ImageWrapper = styled.div`
         left: 50%;
         top: 50%;
         transform: translate(-50%, -50%);
+
+        @media ${theme.media.tablet} {
+            font-size: 16px;
+        }
     }
 
     &:hover {

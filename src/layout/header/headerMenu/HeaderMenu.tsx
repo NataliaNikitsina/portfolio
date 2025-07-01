@@ -26,9 +26,10 @@ const StyledHeaderMenu = styled.nav`
 `
 
 const ListItem = styled.li`
+    transition: transform 2ms 1ms;
+
     &:hover {
         transform: translateY(-2px) scale(1.1);
-        text-shadow: 1px 1px ${theme.colors.fontText}
     }
 `
 
