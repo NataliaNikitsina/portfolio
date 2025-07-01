@@ -19,11 +19,16 @@ const StyledHeaderMenu = styled.nav`
         gap: 30px;
         list-style: none;
     }
+    
+    @media ${theme.media.tablet} {
+        display: none;
+    }
 `
 
 const ListItem = styled.li`
     &:hover {
         transform: translateY(-2px) scale(1.1);
+        text-shadow: 1px 1px ${theme.colors.fontText}
     }
 `
 

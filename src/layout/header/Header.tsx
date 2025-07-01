@@ -3,6 +3,7 @@ import {Container} from "../../components/Container.ts";
 import {FlexWrapper} from "../../components/flexWrapper/FlexWrapper.tsx";
 import {theme} from "../../styles/Theme.ts";
 import {HeaderMenu} from "./headerMenu/HeaderMenu.tsx";
+import {MobileMenu} from "./mobileMenu/MobileMenu.tsx";
 
 const headerArray = [
     "About",
@@ -18,6 +19,7 @@ export const Header = () => {
                 <FlexWrapper justify={"space-between"} align={"center"}>
                     <StyledName>Natalia Nikitsina</StyledName>
                     <HeaderMenu menuItems={headerArray}/>
+                    <MobileMenu menuItems={headerArray}/>
                 </FlexWrapper>
             </Container>
         </StyledHeader>
