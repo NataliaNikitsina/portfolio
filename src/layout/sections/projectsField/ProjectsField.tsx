@@ -40,7 +40,7 @@ export const ProjectsField = () => {
     );
 };
  const StyledProjectsField = styled.section`
-     margin-bottom: 144px;
+     margin-bottom: 140px;
 
      @media ${theme.media.tablet} {
          margin-bottom: 60px;

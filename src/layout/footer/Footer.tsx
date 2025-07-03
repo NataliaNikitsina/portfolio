@@ -24,14 +24,15 @@ export const Footer = () => {
 };
 
 const StyledFooter = styled.footer`
-    background: ${theme.colors.primaryBg};
+    background: ${theme.colors.primaryBg} url("${footerBcg}") no-repeat left bottom / contain;
     margin: 66px auto 0;
-    background-image: url("${footerBcg}");
-    background-size: cover;
-    background-position: center;
     max-width: 1440px;
     width: 100%;
     min-height: 344px;
+    
+    @media ${theme.media.mobile} {
+        min-height: 270px;
+    }
 `
 const StyledList = styled.ul`
     list-style: none;
