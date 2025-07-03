@@ -56,7 +56,7 @@ const StyledMain = styled.section`
 
         @media ${theme.media.tablet} {
             h1 {
-                margin-top: 650px;
+                margin-top: 620px;
             }
         }
 
