@@ -156,7 +156,7 @@ const Photo = styled.img`
         left: 0;
     }
     
-    @media ${theme.media.mobile} {
+    @media screen and (max-width: 530px) {
         mask-size: 486px 550px;
         min-height: 395px;
         top: 0;
