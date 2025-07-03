@@ -19,7 +19,6 @@ export const GlobalStyle = createGlobalStyle`
         -moz-osx-font-smoothing: grayscale;
         line-height: 1.2;
         background-color: ${theme.colors.primaryBg};
-        overflow: hidden;
     }
     
     a {
