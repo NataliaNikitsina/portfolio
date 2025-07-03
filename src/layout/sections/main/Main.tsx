@@ -79,6 +79,10 @@ const StyledMain = styled.section`
                     background-color: transparent;
                 }
             }
+
+            @media screen and (max-width: 1230px) {
+                max-width: 430px;
+            }
             
             @media ${theme.media.large} {
                 margin: 0 auto;
@@ -134,14 +138,15 @@ const Photo = styled.img`
     mask-image: url("${photoBcg}");
     mask-repeat: no-repeat;
     mask-position: left bottom;
+    mask-size: cover;
 
     @media screen and (max-width: 1440px) {
         max-width: 720px;
     }
 
-    @media screen and (max-width: 1100px) {
-        max-width: 650px;
-        right: -120px;
+    @media screen and (max-width: 1230px) {
+        max-width: 605px;
+        right: -50px;
     }
     
     @media ${theme.media.large} {
@@ -169,6 +174,10 @@ const StyledHello = styled.span`
     font-size: 56px;
     color: #333;
     text-align: left;
+
+    @media screen and (max-width: 1230px) {
+        font-size: 44px;
+    }
     
     @media ${theme.media.large} {
         font-size: 46px;
