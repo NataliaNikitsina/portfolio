@@ -9,6 +9,11 @@ export const StyledTitleH2 = styled.h2`
         font-size: 44px;
         margin-bottom: 45px;
     }
+
+    @media ${theme.media.tablet} {
+        font-size: 48px;
+        margin-bottom: 45px;
+    }
     
     position: relative;
     

@@ -34,6 +34,10 @@ const StyledForm = styled.form`
     flex-direction: column;
     align-items: center;
     gap: 24px;
+
+    @media ${theme.media.mobile} {
+        max-width: 345px;
+    }
     
     ${FlexWrapper} {
         width: 100%;
