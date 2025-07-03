@@ -2,7 +2,6 @@ import styled from "styled-components";
 import {FlexWrapper} from "../../../components/flexWrapper/FlexWrapper.tsx";
 import photo from "../../../assets/images/main.png"
 import photoBcg from "../../../assets/images/main-bg.svg"
-import photoBcgSmall from "../../../assets/images/main-bg-small.svg"
 import {textArray} from "../../../components/textArray.ts";
 import {StyledLinkBtn} from "../../../components/StyledLinkBtn.ts";
 import {Container} from "../../../components/Container.ts";
@@ -29,20 +28,38 @@ export const Main = () => {
 
 const StyledMain = styled.section`
     display: flex;
-    margin-bottom: 350px;
+    margin-bottom: 250px;
+
+    @media ${theme.media.large} {
+        margin-bottom: 110px;
+    }
 
     @media ${theme.media.tablet} {
-        margin-bottom: 100px;
+        margin-bottom: 80px;
     }
 
     ${Container} {
         position: relative;
 
-        @media ${theme.media.tablet} {
+        @media ${theme.media.large} {
             h1 {
                 margin-top: 690px;
                 font-size: 28px;
                 text-align: center;
+            }
+        }
+
+        @media ${theme.media.tablet} {
+            h1 {
+                margin-top: 650px;
+            }
+        }
+
+        @media ${theme.media.mobile} {
+            h1 {
+                margin-top: 460px;
+                font-size: 20px;
+                text-align: start;
             }
         }
 
@@ -51,7 +68,7 @@ const StyledMain = styled.section`
             width: 100%;
 
             ${StyledLinkBtn} {
-                max-width: 117px;
+                max-width: 115px;
                 width: 100%;
                 min-height: 43px;
                 border-radius: 8px;
@@ -62,13 +79,14 @@ const StyledMain = styled.section`
                     background-color: transparent;
                 }
             }
-
-            @media ${theme.media.tablet} {
+            
+            @media ${theme.media.large} {
                 margin: 0 auto;
-                max-width: 600px;
+                max-width: 760px;
+                align-items: center;
                 
                 p {
-                    font-size: 22px;
+                    font-size: 24px;
                 }
 
                 ${FlexWrapper} {
@@ -81,30 +99,27 @@ const StyledMain = styled.section`
                     }
                 }
             }
+
+            @media ${theme.media.tablet} {
+                max-width: 650px;
+            }
+
+            @media ${theme.media.mobile} {
+                align-items: start;
+
+                ${FlexWrapper} {
+                    justify-content: start;
+                    ${StyledLinkBtn} {
+                        max-width: 115px;
+                        min-height: 43px;
+                        font-size: 18px;
+                    }
+                }
+            }
         }
         
     }
 `
-// const PhotoWrapper = styled.div`
-//     background-image: url("${photoBcg}");
-//     background-repeat: no-repeat;
-//     background-position: 0 100%;
-//     max-width: 777px;
-//     width: 100%;
-//     min-height: 630px;
-//
-//     position: absolute;
-//     top: 0;
-//     right: -105px;
-//
-//     @media ${theme.media.tablet} {
-//         background-image: url("${photoBcgSmall}");
-//         max-width: 345px;
-//         min-height: 395px;
-//         left: 0;
-//         top: 0;
-//     }
-// `
 
 const Photo = styled.img`
     max-width: 777px;
@@ -118,20 +133,33 @@ const Photo = styled.img`
     
     mask-image: url("${photoBcg}");
     mask-repeat: no-repeat;
-    mask-position: 0 100%;
+    mask-position: left bottom;
+
+    @media screen and (max-width: 1440px) {
+        max-width: 720px;
+    }
+
+    @media screen and (max-width: 1100px) {
+        max-width: 650px;
+        right: -120px;
+    }
+    
+    @media ${theme.media.large} {
+        max-width: 800px;
+        right: 0;
+        top: -40px;
+    }
 
     @media ${theme.media.tablet} {
+        min-height: 650px;
+        top: -20px;
         left: 0;
-        right: 0;
-        bottom: 0;
     }
     
     @media ${theme.media.mobile} {
-        min-width: 450px;
-        mask-image: url("${photoBcgSmall}");
-        left: 0;
-        right: 0;
-        bottom: 0;
+        mask-size: 486px 550px;
+        min-height: 395px;
+        top: 0;
     }
 `
 
@@ -141,9 +169,18 @@ const StyledHello = styled.span`
     font-size: 56px;
     color: #333;
     text-align: left;
-
+    
+    @media ${theme.media.large} {
+        font-size: 46px;
+        text-align: center;
+    }
+    
     @media ${theme.media.tablet} {
-        font-size: 50px;
+        text-align: left;
+    }
+
+    @media ${theme.media.mobile} {
+        font-size: 39px;
     }
     
     span {
@@ -154,6 +191,10 @@ const StyledHello = styled.span`
         @media ${theme.media.tablet} {
             text-align: end;
             width: 100%;
+        }
+
+        @media ${theme.media.mobile} {
+            text-align: start;
         }
         
         &::before {
@@ -168,9 +209,12 @@ const StyledHello = styled.span`
             z-index: -1;
 
             @media ${theme.media.tablet} {
-                text-align: end;
-                width: 63%;
+                width: 50%;
                 right: 0;
+            }
+
+            @media ${theme.media.mobile} {
+                display: none;
             }
         }
     }

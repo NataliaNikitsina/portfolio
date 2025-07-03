@@ -40,7 +40,7 @@ export const GlobalStyle = createGlobalStyle`
         text-transform: uppercase;
         color: ${theme.colors.accent};
         margin-top: 110px;
-        margin-bottom: 12px;
+        margin-bottom: 20px;
     }
     
     h2 {
