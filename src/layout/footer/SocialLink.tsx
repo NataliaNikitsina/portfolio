@@ -20,10 +20,13 @@ const StyledListItem = styled.li`
     a {
         color: ${theme.colors.fontMain};
         display: inline-block;
+        transition: transform 400ms;
     }
     
    a:hover {
-       color: ${theme.colors.fontText};
+       color: ${theme.colors.accent};
+       background-color: ${theme.colors.fontMain};
+       border-radius: 5px;
        transform: translateY(-4px);
    }
 `

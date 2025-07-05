@@ -1,27 +1,21 @@
 import styled from "styled-components";
 import {theme} from "../../../styles/Theme.ts";
+import {font} from "../../../styles/Common.ts";
 
 export const StyledName = styled.span`
-    font-family: "Roboto", sans-serif;
-    font-weight: 700;
-    font-size: 56px;
-    color: #333;
+    ${font ( {family: '"Roboto", sans-serif', weight: 700, color: "#333", Fmin: 42, Fmax: 56} ) };
+    white-space: nowrap;
     
     position: relative;
     z-index: 0;
     display: inline-block;
 
     @media ${theme.media.large} {
-        font-size: 48px;
-    }
-
-    @media ${theme.media.tablet} {
         align-self: end;
     }
 
     @media ${theme.media.mobile} {
         align-self: start;
-        font-size: 42px;
     }
     
     &::before {

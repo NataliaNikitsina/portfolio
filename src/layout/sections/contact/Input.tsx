@@ -22,8 +22,7 @@ export const Input = (props: InputPropsType) => {
                              id={props.idInput}
                              placeholder={props.placeholder}/>}
         </FlexWrapper>
-    )
-        ;
+    );
 };
 
 const StyledLabel = styled.label`

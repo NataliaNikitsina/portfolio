@@ -4,6 +4,7 @@ import photoBcg from "../../../assets/images/main-bg.svg"
 
 export const Photo = styled.img`
     max-width: 777px;
+    height: 630px;
     width: 100%;
     background-color: ${theme.colors.accent};
     object-fit: cover;
@@ -15,32 +16,20 @@ export const Photo = styled.img`
     mask-image: url("${photoBcg}");
     mask-repeat: no-repeat;
     mask-position: left bottom;
-    mask-size: cover;
-
-    @media screen and (max-width: 1440px) {
-        max-width: 720px;
-    }
 
     @media screen and (max-width: 1230px) {
-        max-width: 605px;
-        right: -50px;
-    }
-    
-    @media ${theme.media.large} {
-        max-width: 800px;
-        right: 0;
-        top: -40px;
+       max-width: 550px;
+        right: -80px;
     }
 
-    @media ${theme.media.tablet} {
-        max-width: 700px;
-        top: -20px;
-        right: 0;
+    @media ${theme.media.large} {
+        max-width: 777px;
+        right: 0
     }
-    
-    @media screen and (max-width: 530px) {
-        //mask-size: 486px 550px;
-        min-height: 395px;
-        top: 0;
+
+    @media ${theme.media.mobile} {
+        max-width: 550px;
+        height: 395px;
+        mask-size: 486px 550px;
     }
 `

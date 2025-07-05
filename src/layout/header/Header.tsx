@@ -33,7 +33,7 @@ const StyledHeader = styled.header`
     left: 0;
     right: 0;
     z-index: 99999;
-    max-width: 95vw;
+    max-width: 100vw;
 `
 
 const StyledName = styled.span`

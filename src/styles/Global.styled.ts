@@ -19,6 +19,7 @@ export const GlobalStyle = createGlobalStyle`
         -moz-osx-font-smoothing: grayscale;
         line-height: 1.2;
         background-color: ${theme.colors.primaryBg};
+        min-width: 375px;
     }
     
     a {

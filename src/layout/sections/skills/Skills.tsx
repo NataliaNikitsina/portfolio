@@ -37,19 +37,19 @@ export const Skills = () => {
 };
 
 const StyledSKills = styled.section`
-    margin-bottom: 140px;
+    margin-bottom: 144px;
 
     @media ${theme.media.tablet} {
-        margin-bottom: 60px;
+        margin-bottom: 80px;
     }
     
     ${FlexWrapper} {
-        row-gap: 84px;
-        column-gap: 97px;
+        row-gap: 75px;
+        column-gap: 95px;
 
         @media ${theme.media.tablet} {
-            row-gap: 58px;
-            column-gap: 73px;
+            row-gap: 55px;
+            column-gap: 75px;
         }
     }
 `

@@ -40,9 +40,10 @@ export const ProjectsField = () => {
     );
 };
  const StyledProjectsField = styled.section`
-     margin-bottom: 140px;
+     margin-bottom: 144px;
+     padding: 0 15px;
 
      @media ${theme.media.tablet} {
-         margin-bottom: 60px;
+         margin-bottom: 80px;
      }
  `

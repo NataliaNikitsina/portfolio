@@ -3,27 +3,30 @@ import {StyledTitleH2} from "../../../components/StyledTitleH2.ts";
 import styled from "styled-components";
 import {FlexWrapper} from "../../../components/flexWrapper/FlexWrapper.tsx";
 import {theme} from "../../../styles/Theme.ts";
+import {Container} from "../../../components/Container.ts";
 
 
 export const Contact = () => {
     return (
         <StyledContact>
-            <StyledTitleH2>Contact me</StyledTitleH2>
-            <StyledForm>
-                <Input labelText="Name" inputType="text" placeholder="Your name"
-                       idInput={Math.random().toString()}/>
-                <Input labelText="Email" inputType="email" placeholder="Your email"
-                       idInput={Math.random().toString()}/>
-                <Input labelText="Message" inputType="textarea" placeholder="Your message, optionally..."
-                       idInput={Math.random().toString()}/>
-                <SendButton type="submit" value="Send"/>
-            </StyledForm>
+            <Container>
+                <StyledTitleH2>Contact me</StyledTitleH2>
+                <StyledForm>
+                    <Input labelText="Name" inputType="text" placeholder="Your name"
+                           idInput={Math.random().toString()}/>
+                    <Input labelText="Email" inputType="email" placeholder="Your email"
+                           idInput={Math.random().toString()}/>
+                    <Input labelText="Message" inputType="textarea" placeholder="Your message, optionally..."
+                           idInput={Math.random().toString()}/>
+                    <SendButton type="submit" value="Send"/>
+                </StyledForm>
+            </Container>
         </StyledContact>
     );
 };
 
 const StyledContact = styled.section`
-    
+    margin-bottom: 66px;
 `
 
 const StyledForm = styled.form`
@@ -34,10 +37,6 @@ const StyledForm = styled.form`
     flex-direction: column;
     align-items: center;
     gap: 24px;
-
-    @media ${theme.media.mobile} {
-        max-width: 345px;
-    }
     
     ${FlexWrapper} {
         width: 100%;
@@ -57,7 +56,7 @@ const SendButton = styled.input`
     padding: 8px 24px;
     max-width: 115px;
     width: 100%;
-    background: ${theme.colors.accent};
+    background-color: ${theme.colors.accent};
     font-family: "Roboto", sans-serif;
     font-weight: 500;
     font-size: 18px;

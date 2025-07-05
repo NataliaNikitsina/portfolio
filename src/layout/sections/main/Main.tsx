@@ -36,41 +36,37 @@ const StyledMain = styled.section`
     margin-bottom: 250px;
 
     @media ${theme.media.large} {
-        margin-bottom: 110px;
+        margin-bottom: 150px;
     }
 
     @media ${theme.media.tablet} {
-        margin-bottom: 80px;
+        margin-bottom: 90px;
     }
 
     ${Container} {
         position: relative;
 
-        @media ${theme.media.large} {
+        @media screen and (min-width: 576px) and (max-width: 992px) {
             h1 {
-                margin-top: 690px;
+                margin-top: 730px;
                 font-size: 28px;
                 text-align: center;
             }
         }
 
-        @media ${theme.media.tablet} {
-            h1 {
-                margin-top: 620px;
-            }
-        }
-
         @media ${theme.media.mobile} {
             h1 {
-                margin-top: 460px;
-                font-size: 20px;
-                text-align: start;
+                margin-top: 450px;
             }
         }
 
         ${FlexWrapper} {
             max-width: 508px;
             width: 100%;
+
+            p {
+                font-size: 24px;
+            }
             
             ${StyledLinkBtn} {
                 max-width: 115px;
@@ -84,50 +80,22 @@ const StyledMain = styled.section`
                     background-color: transparent;
                 }
             }
-
-            @media screen and (max-width: 1230px) {
-                max-width: 430px;
-            }
             
             @media ${theme.media.large} {
                 margin: 0 auto;
                 max-width: 760px;
-                
-                p {
-                    font-size: 24px;
-                }
+            }
 
-                &:first-child {
-                    flex-direction: row;
-                }
+            @media screen and (min-width: 576px) and (max-width: 992px) {
+                align-items: center;
 
-                &:nth-child(3) {
+                &:last-child {
                     justify-content: space-evenly;
-                    
+
                     ${StyledLinkBtn} {
                         max-width: 250px;
                         text-align: center;
                         font-size: 22px;
-                    }
-                }
-            }
-
-            @media ${theme.media.tablet} {
-                max-width: 650px;
-                &:first-child {
-                    flex-direction: column;
-                }
-            }
-
-            @media ${theme.media.mobile} {
-                align-items: start;
-
-                &:nth-child(3) {
-                    justify-content: start;
-                    ${StyledLinkBtn} {
-                        max-width: 115px;
-                        min-height: 43px;
-                        font-size: 18px;
                     }
                 }
             }

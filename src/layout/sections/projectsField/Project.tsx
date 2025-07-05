@@ -39,10 +39,7 @@ const StyledProject = styled.div`
     &:nth-of-type(even) {
         flex-direction: row-reverse;
     }
-
-    @media ${theme.media.large} {
-        max-width: 850px;
-    }
+    
 
     @media ${theme.media.mobile} {
         min-height: 1000px;
@@ -55,25 +52,21 @@ const StyledProject = styled.div`
     }
     
     ${FlexWrapper} {
-        max-width: 410px;
+        max-width: 406px;
+        width: 280px;
+        flex-grow: 1;
         margin-left: 50px;
-        
-        @media ${theme.media.tablet} {
-            max-width: 310px;
-            margin-right: 20px;
-            margin-left: 20px;
-            
+        margin-right: 20px;
+
+        @media ${theme.media.tablet} and (min-width: 576px){
+            padding: 15px 0;
             h3 {
-                font-size: 30px;
+                font-size: 36px;
             }
         }
 
         @media ${theme.media.mobile} {
-            margin-bottom: 130px;
-
-            h3 {
-                font-size: 40px;
-            }
+            margin: 145px auto;
         }
         
         ${StyledLinkBtn} {
@@ -85,8 +78,7 @@ const StyledProject = styled.div`
 `
 
 const ImageWrapper = styled.div`
-    max-width: 495px;
-    width: 100%;
+    max-width: 50%;
     
     position: relative;
 
@@ -105,16 +97,33 @@ const ImageWrapper = styled.div`
         transform: translate(-50%, -50%);
     }
 
+    &::before {
+        position: absolute;
+        content: "";
+        backdrop-filter: blur(6px);
+        background: rgba(0, 0, 0, 0.12);
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+
+        opacity: 0;
+    }
+
     &:hover {
+
         &::before {
-            position: absolute;
-            content: "";
-            backdrop-filter: blur(6px);
-            background: rgba(0, 0, 0, 0.12);
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
+            opacity: 1;
+        }
+        
+        ${StyledLinkBtn} {
+            opacity: 1;
+        }
+    }
+    
+    @media ${theme.media.tablet} {
+        &::before {
+            opacity: 1;
         }
 
         ${StyledLinkBtn} {
@@ -122,11 +131,8 @@ const ImageWrapper = styled.div`
         }
     }
 
-    @media ${theme.media.tablet} {
-        min-width: 45%;
-    }
-    
     @media ${theme.media.mobile} {
-        height: 500px;
+        max-height: 524px;
+        max-width: 100%;
     }
 `
