@@ -1,5 +1,5 @@
-import styled from "styled-components";
 import {theme} from "../styles/Theme.ts";
+import styled from "styled-components";
 
 export const StyledLinkBtn = styled.a`
     font-family: "Roboto", sans-serif;

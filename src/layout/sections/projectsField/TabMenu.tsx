@@ -1,25 +1,25 @@
-import styled from "styled-components";
+import styled, {css} from "styled-components";
 import {StyledLinkBtn} from "../../../components/StyledLinkBtn.ts";
 import {theme} from "../../../styles/Theme.ts";
 import {FlexWrapper} from "../../../components/flexWrapper/FlexWrapper.tsx";
 
+export type TabStatusType = "all" | "landing page" | "react" | "spa";
 
-export const TabMenu = () => {
+type TabMenuPropsType = {
+    tabItems: Array <{title:string, status: TabStatusType}>,
+    changeFilterStatus: (value: TabStatusType) => void,
+    currentFilterStatus: string,
+}
+
+export const TabMenu = (props: TabMenuPropsType) => {
     return (
         <StyledTabMenu>
             <FlexWrapper justify={"space-evenly"} wrap={"wrap"} gap={"15px"}>
-                <StyledTabItem>
-                    <StyledLinkBtn as="button" href="#">All</StyledLinkBtn>
-                </StyledTabItem>
-                <StyledTabItem>
-                    <StyledLinkBtn as="button" href="#">Landing Page</StyledLinkBtn>
-                </StyledTabItem>
-                <StyledTabItem>
-                    <StyledLinkBtn as="button" href="#">React</StyledLinkBtn>
-                </StyledTabItem>
-                <StyledTabItem>
-                    <StyledLinkBtn as="button" href="#">Spa</StyledLinkBtn>
-                </StyledTabItem>
+                {props.tabItems.map((item, i) => {
+                    return (<StyledTabItem active={props.currentFilterStatus === item.status} key={i}>
+                        <StyledLinkBtn as="button" onClick={() => {props.changeFilterStatus(item.status)}}>{item.title}</StyledLinkBtn>
+                    </StyledTabItem>)
+                })}
             </FlexWrapper>
         </StyledTabMenu>
     )
@@ -31,7 +31,7 @@ const StyledTabMenu = styled.ul`
     margin: 0 auto 80px;
 `
 
-const StyledTabItem = styled.li`
+const StyledTabItem = styled.li<{active?: boolean}>`
     ${StyledLinkBtn} {
         max-width: 200px;
         width: 100%;
@@ -39,5 +39,9 @@ const StyledTabItem = styled.li`
         border-radius: 8px;
         border: 2px solid ${theme.colors.fontMain};
         background-color: transparent;
+
+        ${props => props.active && css<{active?: boolean}>`
+        background-color: ${theme.colors.accent};
+    `}
     }
 `
