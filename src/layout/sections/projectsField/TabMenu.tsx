@@ -7,7 +7,7 @@ import {FlexWrapper} from "../../../components/flexWrapper/FlexWrapper.tsx";
 export const TabMenu = () => {
     return (
         <StyledTabMenu>
-            <FlexWrapper justify={"space-evenly"}>
+            <FlexWrapper justify={"space-evenly"} wrap={"wrap"} gap={"15px"}>
                 <StyledTabItem>
                     <StyledLinkBtn as="button" href="#">All</StyledLinkBtn>
                 </StyledTabItem>

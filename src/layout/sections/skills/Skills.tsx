@@ -45,7 +45,7 @@ const StyledSKills = styled.section`
     
     ${FlexWrapper} {
         row-gap: 75px;
-        column-gap: 95px;
+        column-gap: 97px;
 
         @media ${theme.media.tablet} {
             row-gap: 55px;
