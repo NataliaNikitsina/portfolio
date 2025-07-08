@@ -8,6 +8,7 @@ import {Project} from "./Project.tsx";
 import styled from "styled-components";
 import {Container} from "../../../components/Container.ts";
 import {theme} from "../../../styles/Theme.ts";
+import {TabMenu} from "./TabMenu.tsx";
 
 const projectsArray = [
     {
@@ -32,6 +33,7 @@ export const ProjectsField = () => {
         <StyledProjectsField>
             <Container>
                 <StyledTitleH2>Projects</StyledTitleH2>
+                <TabMenu/>
                 <FlexWrapper direction="column" align="center" gap="80px">
                     {projectsArray.map( (item, i) => (<Project key={i} title={item.projectTitle} text={item.projectText} way={item.imageWay}/>))}
                 </FlexWrapper>
