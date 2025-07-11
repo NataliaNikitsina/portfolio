@@ -43,6 +43,8 @@ const StyledTabItem = styled.li<{active?: boolean}>`
         border-radius: 8px;
         border: 2px solid ${theme.colors.fontMain};
         background-color: transparent;
+        
+        transition: ${theme.animations.transition};
 
         ${props => props.active && css<{active?: boolean}>`
             background-color: ${theme.colors.accent};

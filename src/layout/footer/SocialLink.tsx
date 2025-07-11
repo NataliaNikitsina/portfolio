@@ -20,7 +20,8 @@ const StyledListItem = styled.li`
     a {
         color: ${theme.colors.fontMain};
         display: inline-block;
-        transition: transform 400ms;
+
+        transition: ${theme.animations.transition};
     }
     
    a:hover {

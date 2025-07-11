@@ -3,6 +3,7 @@ import {SocialLink} from "./SocialLink.tsx";
 import {FlexWrapper} from "../../components/flexWrapper/FlexWrapper.tsx";
 import {theme} from "../../styles/Theme.ts";
 import footerBcg from "../../assets/images/footer-bcg.svg"
+import {Container} from "../../components/Container.ts";
 
 const socialLinkArray = [
     "gitHubLogo",
@@ -13,22 +14,30 @@ const socialLinkArray = [
 export const Footer = () => {
     return (
         <StyledFooter>
-            <FlexWrapper direction="column" align={"center"} gap={"32px"}>
-                <StyledList>
-                    {socialLinkArray.map(item => (<SocialLink iconId={item}/>))}
-                </StyledList>
-                <StyledSmall>Natalia Nikitsina 2025</StyledSmall>
-            </FlexWrapper>
+            <Container>
+                <FlexWrapper direction="column" align={"center"} gap={"32px"}>
+                    <StyledList>
+                        {socialLinkArray.map(item => (<SocialLink iconId={item}/>))}
+                    </StyledList>
+                    <StyledSmall>Natalia Nikitsina 2025</StyledSmall>
+                </FlexWrapper>
+            </Container>
         </StyledFooter>
     );
 };
 
 const StyledFooter = styled.footer`
-    background: ${theme.colors.primaryBg} url("${footerBcg}") no-repeat left bottom / contain;
-    max-width: 1440px;
-    width: 100%;
-    min-height: 345px;
     
+    background-color: ${theme.colors.primaryBg};
+    
+    ${Container} {
+        min-height: 335px;
+        background-image: url("${footerBcg}");
+        background-repeat: no-repeat;
+        background-position: bottom;
+        background-size: cover;
+    }
+
     @media ${theme.media.mobile} {
         min-height: 280px;
     }

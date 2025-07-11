@@ -4,6 +4,7 @@ import {StyledTitleH2} from "../../../components/StyledTitleH2.ts";
 import styled from "styled-components";
 import {Container} from "../../../components/Container.ts";
 import {theme} from "../../../styles/Theme.ts";
+import { Fade } from "react-awesome-reveal";
 
 const skillArray = [
     "webStormIcon",
@@ -28,9 +29,11 @@ export const Skills = () => {
         <StyledSKills id={"skills"}>
             <Container>
                 <StyledTitleH2>Skills</StyledTitleH2>
-                <FlexWrapper wrap="wrap" justify="space-evenly">
-                    {skillArray.map((skill, i) => (<Icon key={i} iconId={skill}/>) ) }
-                </FlexWrapper>
+                    <FlexWrapper wrap="wrap" justify="space-evenly">
+                        <Fade cascade={true} damping={0.1}>
+                        {skillArray.map((skill, i) => (<Icon key={i} iconId={skill}/>) ) }
+                        </Fade>
+                    </FlexWrapper>
             </Container>
         </StyledSKills>
     );

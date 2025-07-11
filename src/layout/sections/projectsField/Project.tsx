@@ -94,7 +94,9 @@ const ImageWrapper = styled.div`
         position: absolute;
         left: 50%;
         top: 50%;
-        transform: translate(-50%, -50%);
+        transform: translate(-50%, -40%);
+
+        transition: ${theme.animations.transition};
     }
 
     &::before {
@@ -108,6 +110,8 @@ const ImageWrapper = styled.div`
         right: 0;
 
         opacity: 0;
+        
+        transition: ${theme.animations.transition};
     }
 
     &:hover {
@@ -117,6 +121,7 @@ const ImageWrapper = styled.div`
         }
         
         ${StyledLinkBtn} {
+            transform: translate(-50%, -50%);
             opacity: 1;
         }
     }

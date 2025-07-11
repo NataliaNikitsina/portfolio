@@ -11,6 +11,7 @@ export const HeaderMenu = (props: { menuItems: Array <{title:string, href: strin
                         activeClass="active"
                         smooth={true}
                         spy={true}
+                        offset={-60}
                         to={item.href}>
                         {item.title}
                     </NavLink> </ListItem>)
@@ -33,7 +34,7 @@ const StyledHeaderMenu = styled.nav`
 `
 
 const ListItem = styled.li`
-    transition: transform 2ms 1ms;
+    transition: ${theme.animations.transition};
 
     &:hover {
         transform: translateY(-2px) scale(1.1);

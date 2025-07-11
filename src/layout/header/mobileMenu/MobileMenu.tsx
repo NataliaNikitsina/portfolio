@@ -16,10 +16,9 @@ export const MobileMenu = (props: { menuItems: Array<{title:string, href: string
                 <ul>
                     {props.menuItems.map((item, i) => {
                         return (<ListItem key={i}> <NavLink isOpen={false}
-                                                            activeClass="active"
                                                             smooth={true}
                                                             spy={true}
-                                                            onClick={ () => {setMenuIsOpen(false)}}
+                                                            onClick={() => {setTimeout(onBurgerBtnClick, 200)}}
                                                             to={item.href}>
                             {item.title}
                         </NavLink> </ListItem>)
@@ -100,21 +99,33 @@ const MobileMenuPopup = styled.div<{isOpen: boolean}>`
     bottom: 0;
     z-index: 99999;
     background-color: ${theme.colors.accent};
-    display: none;
     
-    ${props => props.isOpen && css<{isOpen: boolean}>`
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    `}
-    
+    transform: translateY(-100%);
+    transition: 0.6s ease-in-out;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
     ul {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 30px;
+        gap: 10px;
         list-style: none;
+        
+        transition: ${theme.animations.transition};
     }
+    
+    ${props => props.isOpen && css<{isOpen: boolean}>`
+        
+        transform: translateY(0);
+        
+        & ul {
+            gap: 50px;
+        }
+    `}
+    
 `
 
 const ListItem = styled.li`
@@ -127,17 +138,7 @@ const ListItem = styled.li`
 const NavLink = styled(Link)<{isOpen: boolean}>`
     font-family: "Raleway", sans-serif;
     font-weight: 500;
-    font-size: 22px;
+    font-size: 30px;
     color: ${theme.colors.fontMain};
     cursor: pointer;
-
-    ${props => props.isOpen && css<{isOpen: boolean}>`
-        font-size: 26px;
-        font-weight: bold;
-    `}
-    
-    &:active {
-        transform: translateY(-2px) scale(1.1);
-        text-shadow: 1px 1px ${theme.colors.fontText}
-    }
 `

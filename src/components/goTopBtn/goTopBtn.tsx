@@ -19,7 +19,6 @@ export const GoTopBtn = () => {
     }, [])
 
     return (
-
         <>
             {showBtn && (
                 <StyledGoTopBtn onClick={() => {
