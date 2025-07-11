@@ -14,7 +14,7 @@ type TabMenuPropsType = {
 export const TabMenu = (props: TabMenuPropsType) => {
     return (
         <StyledTabMenu>
-            <FlexWrapper justify={"space-evenly"} wrap={"wrap"} gap={"15px"}>
+            <FlexWrapper justify={"space-evenly"} wrap={"wrap"} gap={"20px"}>
                 {props.tabItems.map((item, i) => {
                     return (<StyledTabItem active={props.currentFilterStatus === item.status} key={i}>
                         <StyledLinkBtn as="button" onClick={() => {props.changeFilterStatus(item.status)}}>{item.title}</StyledLinkBtn>
@@ -26,9 +26,13 @@ export const TabMenu = (props: TabMenuPropsType) => {
 }
 
 const StyledTabMenu = styled.ul`
-    max-width: 800px;
+    max-width: 700px;
     width: 100%;
     margin: 0 auto 80px;
+    
+    @media ${theme.media.tablet} {
+        margin-bottom: 45px;
+    }
 `
 
 const StyledTabItem = styled.li<{active?: boolean}>`
@@ -41,7 +45,8 @@ const StyledTabItem = styled.li<{active?: boolean}>`
         background-color: transparent;
 
         ${props => props.active && css<{active?: boolean}>`
-        background-color: ${theme.colors.accent};
+            background-color: ${theme.colors.accent};
+            border: none;
     `}
     }
 `

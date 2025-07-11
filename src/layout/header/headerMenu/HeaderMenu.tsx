@@ -1,12 +1,19 @@
 import styled from "styled-components";
 import {theme} from "../../../styles/Theme.ts";
+import {Link} from "react-scroll";
 
-export const HeaderMenu = (props: { menuItems: Array<string> }) => {
+export const HeaderMenu = (props: { menuItems: Array <{title:string, href: string}> }) => {
     return (
         <StyledHeaderMenu>
             <ul>
                 {props.menuItems.map((item, i) => {
-                    return (<ListItem key={i}> <Link href="">{item}</Link> </ListItem>)
+                    return (<ListItem key={i}> <NavLink
+                        activeClass="active"
+                        smooth={true}
+                        spy={true}
+                        to={item.href}>
+                        {item.title}
+                    </NavLink> </ListItem>)
                 })}
             </ul>
         </StyledHeaderMenu>
@@ -33,9 +40,14 @@ const ListItem = styled.li`
     }
 `
 
-const Link = styled.a`
+const NavLink = styled(Link)`
     font-family: "Raleway", sans-serif;
     font-weight: 500;
     font-size: 22px;
     color: ${theme.colors.fontMain};
+    cursor: pointer;
+
+    &:active {
+        transform: translateY(-2px) scale(1.1);
+    }
 `

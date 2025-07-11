@@ -4,12 +4,25 @@ import {FlexWrapper} from "../../components/flexWrapper/FlexWrapper.tsx";
 import {theme} from "../../styles/Theme.ts";
 import {HeaderMenu} from "./headerMenu/HeaderMenu.tsx";
 import {MobileMenu} from "./mobileMenu/MobileMenu.tsx";
+import {animateScroll as scroll} from 'react-scroll'
 
 const headerArray = [
-    "About",
-    "Skills",
-    "Projects",
-    "Contacts"
+    {
+        title: "About",
+        href: "about",
+    },
+    {
+        title: "Skills",
+        href: "skills",
+    },
+    {
+        title: "Projects",
+        href: "projects",
+    },
+    {
+        title: "Contacts",
+        href: "contacts",
+    },
 ]
 
 export const Header = () => {
@@ -17,7 +30,7 @@ export const Header = () => {
         <StyledHeader>
             <Container>
                 <FlexWrapper justify={"space-between"} align={"center"}>
-                    <StyledName>Natalia Nikitsina</StyledName>
+                    <StyledName onClick={ () => {scroll.scrollToTop()}}>Natalia Nikitsina</StyledName>
                     <HeaderMenu menuItems={headerArray}/>
                     <MobileMenu menuItems={headerArray}/>
                 </FlexWrapper>
@@ -41,4 +54,5 @@ const StyledName = styled.span`
     font-weight: 700;
     font-size: 22px;
     color: ${theme.colors.fontMain};
+    cursor: pointer;
 `

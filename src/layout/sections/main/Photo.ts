@@ -8,6 +8,7 @@ export const Photo = styled.img`
     width: 100%;
     background-color: ${theme.colors.accent};
     object-fit: cover;
+    display: block;
 
     position: absolute;
     top: 0;
@@ -16,6 +17,7 @@ export const Photo = styled.img`
     mask-image: url("${photoBcg}");
     mask-repeat: no-repeat;
     mask-position: left bottom;
+    //mask-size: cover;
 
     @media screen and (max-width: 1230px) {
        max-width: 550px;

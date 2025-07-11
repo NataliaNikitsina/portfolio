@@ -17,16 +17,16 @@ const tabArray: Array <{title:string, status: TabStatusType}> = [
         status: "all",
     },
     {
-        title: "Landing Page",
-        status: "landing page",
-    },
-    {
         title: "React",
         status: "react",
     },
     {
         title: "Spa",
         status: "spa",
+    },
+    {
+        title: "Landing Page",
+        status: "landing page",
     },
 ]
 
@@ -70,7 +70,7 @@ export const ProjectsField = () => {
     }
 
     return (
-        <StyledProjectsField>
+        <StyledProjectsField id={"projects"}>
             <Container>
                 <StyledTitleH2>Projects</StyledTitleH2>
                 <TabMenu tabItems={tabArray}
@@ -84,6 +84,9 @@ export const ProjectsField = () => {
     );
 };
  const StyledProjectsField = styled.section`
+     position: relative;
+     z-index: 999;
+     
      margin-bottom: 144px;
      padding: 0 15px;
 

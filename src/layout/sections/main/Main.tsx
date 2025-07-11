@@ -1,19 +1,30 @@
 import styled from "styled-components";
 import {FlexWrapper} from "../../../components/flexWrapper/FlexWrapper.tsx";
-import photo from "../../../assets/images/main.png"
 import {textArray} from "../../../components/textArray.ts";
 import {StyledLinkBtn} from "../../../components/StyledLinkBtn.ts";
 import {Container} from "../../../components/Container.ts";
 import {theme} from "../../../styles/Theme.ts";
-import {Photo} from "./Photo.ts";
 import {StyledHello} from "./StyledHello.ts";
 import {StyledName} from "./StyledName.ts";
+import Typewriter from 'typewriter-effect';
+import photo from "../../../assets/images/main.png"
+import {Photo} from "./Photo.ts";
+// import Tilt from "react-parallax-tilt";
 
 export const Main = () => {
     return (
-        <StyledMain>
+        <StyledMain id={"about"}>
             <Container>
-                <h1>Software Developer</h1>
+                <h1>
+                    <p>Software Developer</p>
+                    <Typewriter
+                        options={{
+                            strings: ['Software Developer',],
+                            autoStart: true,
+                            loop: true,
+                        }}
+                    />
+                </h1>
                 <FlexWrapper direction="column" gap="32px">
                     <FlexWrapper direction="column">
                         <StyledHello>Hello, my name is</StyledHello>
@@ -45,6 +56,12 @@ const StyledMain = styled.section`
 
     ${Container} {
         position: relative;
+        
+        h1 {
+            p {
+                display: none;
+            }
+        }
 
         @media screen and (min-width: 576px) and (max-width: 992px) {
             h1 {
@@ -100,7 +117,6 @@ const StyledMain = styled.section`
                 }
             }
         }
-        
     }
 `
 

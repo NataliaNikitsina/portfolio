@@ -25,7 +25,7 @@ const skillArray = [
 
 export const Skills = () => {
     return (
-        <StyledSKills>
+        <StyledSKills id={"skills"}>
             <Container>
                 <StyledTitleH2>Skills</StyledTitleH2>
                 <FlexWrapper wrap="wrap" justify="space-evenly">

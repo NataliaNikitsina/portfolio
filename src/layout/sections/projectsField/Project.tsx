@@ -132,7 +132,7 @@ const ImageWrapper = styled.div`
     }
 
     @media ${theme.media.mobile} {
-        max-height: 524px;
+        height: 524px;
         max-width: 100%;
     }
 `
