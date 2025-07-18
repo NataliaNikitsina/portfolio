@@ -17,11 +17,11 @@ export const Project = (props : ProjectPropsType) => {
             <FlexWrapper direction="column" justify={"center"} gap={"24px"}>
                 <h3>{props.title}</h3>
                 <p>{props.text}</p>
-                <StyledLinkBtn>View Project</StyledLinkBtn>
+                <StyledLinkBtn border={theme.button.projectBorder}>View Project</StyledLinkBtn>
             </FlexWrapper>
             <ImageWrapper>
                 <Image source={props.way} alt="Project Name"/>
-                <StyledLinkBtn href='/'>Open</StyledLinkBtn>
+                <StyledLinkBtn href='/' bcgColor={theme.colors.accent}>Open</StyledLinkBtn>
             </ImageWrapper>
         </StyledProject>
     );
@@ -59,7 +59,7 @@ const StyledProject = styled.div`
         margin-right: 20px;
 
         @media ${theme.media.tablet} and (min-width: 576px){
-            padding: 15px 0;
+            padding: 20px 0;
             h3 {
                 font-size: 36px;
             }
@@ -70,7 +70,6 @@ const StyledProject = styled.div`
         }
         
         ${StyledLinkBtn} {
-            border: 1px solid ${theme.colors.fontMain};
             border-radius: 24px;
         }
     }
@@ -87,7 +86,6 @@ const ImageWrapper = styled.div`
         max-width: 150px;
         width: 100%;
         min-height: 43px;
-        background-color: ${theme.colors.accent};
         
         opacity: 0;
 

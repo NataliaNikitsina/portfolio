@@ -4,21 +4,47 @@ import styled from "styled-components";
 import {FlexWrapper} from "../../../components/flexWrapper/FlexWrapper.tsx";
 import {theme} from "../../../styles/Theme.ts";
 import {Container} from "../../../components/Container.ts";
+import emailjs from '@emailjs/browser';
+import {ElementRef, useRef} from "react";
 
 
 export const Contact = () => {
+
+    const form = useRef<ElementRef<'form'>>(null);
+
+    const sendEmail = (e:any) => {
+        e.preventDefault();
+
+        if(!form.current) return
+
+        emailjs
+            .sendForm('service_9lufll7', 'template_352lfsq', form.current, {
+                publicKey: '1H15_TmI18RzRn9-t',
+            })
+            .then(
+                () => {
+                    console.log('SUCCESS!');
+                },
+                (error) => {
+                    console.log('FAILED...', error.text);
+                },
+            );
+
+        e.target.reset();
+    };
+
     return (
         <StyledContact id="contacts">
             <Container>
                 <StyledTitleH2>Contact me</StyledTitleH2>
-                <StyledForm>
-                    <Input labelText="Name" inputType="text" placeholder="Your name"
+                <StyledForm ref={form} onSubmit={sendEmail}>
+                    <Input name="user_name" labelText="Name" inputType="text" placeholder="Your name"
                            idInput={Math.random().toString()}/>
-                    <Input labelText="Email" inputType="email" placeholder="Your email"
+                    <Input name="user_email" labelText="Email" inputType="email" placeholder="Your email"
                            idInput={Math.random().toString()}/>
-                    <Input labelText="Message" inputType="textarea" placeholder="Your message, optionally..."
+                    <Input name="message" labelText="Message" inputType="textarea" placeholder="Your message, optionally..."
                            idInput={Math.random().toString()}/>
-                    <SendButton type="submit" value="Send"/>
+                    <SendButton>Send</SendButton>
                 </StyledForm>
             </Container>
         </StyledContact>
@@ -50,7 +76,7 @@ const StyledForm = styled.form`
 `
 
 
-const SendButton = styled.input`
+const SendButton = styled.button`
     border: none;
     border-radius: 8px;
     padding: 8px 24px;
@@ -63,6 +89,6 @@ const SendButton = styled.input`
     line-height: 1.5;
     color: ${theme.colors.fontMain};
     align-self: flex-end;
+    cursor: pointer;
 `
-
 

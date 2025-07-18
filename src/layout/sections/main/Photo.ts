@@ -20,7 +20,7 @@ export const Photo = styled.img`
     //mask-size: cover;
 
     @media screen and (max-width: 1230px) {
-       max-width: 550px;
+        max-width: 550px;
         right: -80px;
     }
 

@@ -8,6 +8,11 @@ export const theme = {
         fontMain: "#25282b",
     },
 
+    button: {
+        border: "2px solid #25282b",
+        projectBorder: "1px solid #25282b",
+    },
+
     media: {
         large: "screen and (max-width: 992px)",
         tablet: "screen and (max-width: 768px)",

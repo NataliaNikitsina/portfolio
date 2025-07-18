@@ -1,11 +1,11 @@
-import styled, {css} from "styled-components";
 import {Container} from "../../components/Container.ts";
 import {FlexWrapper} from "../../components/flexWrapper/FlexWrapper.tsx";
-import {theme} from "../../styles/Theme.ts";
-import {HeaderMenu} from "./headerMenu/HeaderMenu.tsx";
+import {DesktopMenu} from "./desktopMenu/DesktopMenu.tsx";
 import {MobileMenu} from "./mobileMenu/MobileMenu.tsx";
 import {animateScroll as scroll} from 'react-scroll'
 import {useEffect, useState} from "react";
+import  React from "react";
+import {S} from "./Header_Styles.ts"
 
 const headerArray = [
     {
@@ -26,7 +26,7 @@ const headerArray = [
     },
 ]
 
-export const Header = () => {
+export const Header: React.FC = () => {
     const [changedColor, setChangedColor] = useState(false);
 
     useEffect(() => {
@@ -41,36 +41,15 @@ export const Header = () => {
 
 
     return (
-        <StyledHeader bcgColor={changedColor}>
+        <S.Header bcgColor={changedColor}>
             <Container>
                 <FlexWrapper justify={"space-between"} align={"center"}>
-                    <StyledName onClick={ () => {scroll.scrollToTop()}}>Natalia Nikitsina</StyledName>
-                    <HeaderMenu menuItems={headerArray}/>
+                    <S.Name onClick={ () => {scroll.scrollToTop()}}>Natalia Nikitsina</S.Name>
+                    <DesktopMenu menuItems={headerArray}/>
                     <MobileMenu menuItems={headerArray}/>
                 </FlexWrapper>
             </Container>
-        </StyledHeader>
+        </S.Header>
     );
 };
 
-const StyledHeader = styled.header<{bcgColor: boolean}>`
-    padding: 14px 0;
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 99999;
-    max-width: 100vw;
-
-    ${props => props.bcgColor && css<{bcgColor: boolean}>`
-                background-color: ${theme.colors.accent};
-        `}
-`
-
-const StyledName = styled.span`
-    font-family: "Comfortaa", sans-serif;;
-    font-weight: 700;
-    font-size: 22px;
-    color: ${theme.colors.fontMain};
-    cursor: pointer;
-`

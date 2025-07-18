@@ -32,8 +32,8 @@ export const Main = () => {
                     </FlexWrapper>
                     <p>{textArray[0]}</p>
                     <FlexWrapper gap="20px">
-                        <StyledLinkBtn href='/'>Projects</StyledLinkBtn>
-                        <StyledLinkBtn href='/'>LinkedIn</StyledLinkBtn>
+                        <StyledLinkBtn href='/' bcgColor={theme.colors.accent}>Projects</StyledLinkBtn>
+                        <StyledLinkBtn href='/' border={theme.button.border}>LinkedIn</StyledLinkBtn>
                     </FlexWrapper>
                 </FlexWrapper>
                 <Photo src={photo} alt="main-photo"/>
@@ -90,12 +90,6 @@ const StyledMain = styled.section`
                 width: 100%;
                 min-height: 43px;
                 border-radius: 8px;
-                background-color: ${theme.colors.accent};
-
-                & + ${StyledLinkBtn} {
-                    border: 2px solid ${theme.colors.fontMain};
-                    background-color: transparent;
-                }
             }
             
             @media ${theme.media.large} {

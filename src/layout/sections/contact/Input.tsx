@@ -8,19 +8,18 @@ type InputPropsType = {
     inputType?: string,
     placeholder?: string,
     idInput?: string,
+    name: string,
 }
 
 export const Input = (props: InputPropsType) => {
     return (
         <FlexWrapper direction="column" gap="8px">
             <StyledLabel htmlFor={props.idInput}>{props.labelText}</StyledLabel>
-            {props.inputType === "textarea" ?
-                <StyledInput as={"textarea"} id={props.idInput}
-                                placeholder={props.placeholder}/>
-                      :
-                <StyledInput type={props.inputType}
-                             id={props.idInput}
-                             placeholder={props.placeholder}/>}
+            <StyledInput required type={props.inputType}
+                         as={props.inputType === "textarea" ? 'textarea' : ''}
+                         id={props.idInput}
+                         placeholder={props.placeholder}
+                         name={props.name}/>
         </FlexWrapper>
     );
 };
@@ -44,7 +43,8 @@ export const StyledInput = styled.input`
 
     &::placeholder {
         color: ${theme.colors.fontText}
-    };
+    }
+;
 
     &:focus-visible {
         outline: 1px solid ${theme.colors.fontText};

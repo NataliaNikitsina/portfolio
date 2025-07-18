@@ -1,10 +1,13 @@
 import styled, {css} from "styled-components";
 import {theme} from "../../../styles/Theme.ts";
 import {useState} from "react";
-import {Link} from "react-scroll";
+import {Menu} from "../menu/Menu.tsx";
+import React from "react";
 
-export const MobileMenu = (props: { menuItems: Array<{title:string, href: string}> }) => {
+export const MobileMenu: React.FC<{ menuItems: Array<{title:string, href: string}> }> = (props: { menuItems: Array<{title:string, href: string}> }) => {
+
     const [menuIsOpen, setMenuIsOpen] = useState(false)
+
     const onBurgerBtnClick = () => {setMenuIsOpen (!menuIsOpen);};
 
     return (
@@ -13,17 +16,8 @@ export const MobileMenu = (props: { menuItems: Array<{title:string, href: string
                 <span></span>
             </BurgerButton>
             <MobileMenuPopup isOpen={menuIsOpen} onClick={ () => {setMenuIsOpen(false)}}>
-                <ul>
-                    {props.menuItems.map((item, i) => {
-                        return (<ListItem key={i}> <NavLink isOpen={false}
-                                                            smooth={true}
-                                                            spy={true}
-                                                            onClick={() => {setTimeout(onBurgerBtnClick, 200)}}
-                                                            to={item.href}>
-                            {item.title}
-                        </NavLink> </ListItem>)
-                    })}
-                </ul>
+                <Menu menuItems={props.menuItems}
+                      onClick={() => {setTimeout(onBurgerBtnClick, 300)}}/>
             </MobileMenuPopup>
         </StyledMobileMenu>
     );
@@ -126,19 +120,4 @@ const MobileMenuPopup = styled.div<{isOpen: boolean}>`
         }
     `}
     
-`
-
-const ListItem = styled.li`
-    &:hover {
-        transform: translateY(-2px) scale(1.1);
-        text-shadow: 1px 1px ${theme.colors.fontText}
-    }
-`
-
-const NavLink = styled(Link)<{isOpen: boolean}>`
-    font-family: "Raleway", sans-serif;
-    font-weight: 500;
-    font-size: 30px;
-    color: ${theme.colors.fontMain};
-    cursor: pointer;
 `

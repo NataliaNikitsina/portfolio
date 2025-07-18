@@ -38,4 +38,6 @@ const StyledGoTopBtn = styled.button`
     color: ${theme.colors.secondaryBg};
     background-color: ${theme.colors.accent};
     border-radius: 8px;
+    z-index: 999;
+    cursor: pointer;
 `
